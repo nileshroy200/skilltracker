@@ -27,7 +27,7 @@ body {
 /* Header Section */
 header {
   width: 100%;
-  height: 20%;
+  height: 22%;
   display: flex;
   align-items: center;
   position: sticky;
@@ -310,7 +310,7 @@ select option{
   font-size: 0.6em;
   color: #252EFF;
   border: 1px solid #7881d1a2;
-  border-radius: 16px;
+  border-radius: 6px;
   background-color: #B0B3FD;
 }
 #resources input::placeholder{
@@ -323,10 +323,10 @@ select option{
 .card-button{
   height: 22px;
   width: 270px;
-  padding: 0 10px;
+  padding: 0 5px;
   background-color: #767bb363;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: 11px;
   color: #d5dff2;
   margin: -2px 5px 0px 0px;
@@ -339,7 +339,7 @@ select option{
 }
 .delete-button{
   color: #f33565;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
 }
 .save-button{
   color: #1bb155;
