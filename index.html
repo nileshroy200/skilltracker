@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- App Header Section -->
+  <header>
+    <div id="headerwarp" class="margin-wrap-cont">
+      <section id="user-profile">
+        <div class="avatar">
+          <img src="https://www.w3schools.com/howto/img_avatar.png" alt="profile" />
+        </div>
+        <div class="user-info">
+          <h2>Your Name</h2>
+          <p>Write your Inspiriation Quote</p>
+          <button id="edit-profile-button">Edit Profile</button>
+        </div>
+      </section>
+
+      <section id="date-time">
+        <p id="current-time"></p>
+        <p id="current-date"></p>
+      </section>
+    </div>
+  </header>
+  <!-- popup section to take user profile information -->
+  <div id="edit-profile-popup" class="popup">
+    <div class="popup-content">
+      <span id="close-button" class="close-btn">&times;</span>
+      <h2>Edit Profile</h2>
+      <form id="edit-profile-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="bio">Bio:</label>
+        <textarea id="bio" name="bio" required></textarea>
+        <label for="avatar">Profile Picture:</label>
+        <input type="file" id="avatar" name="avatar" accept="image/*" />
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- App main body -->
+  <main>
+    <div id="mainwrap" class="margin-wrap-cont">
+      <!-- Column heading titles -->
+      <div id="title-card">
+        <div class="title-cont main">
+          <h4>Target</h4>
+        </div>
+        <div class="title-cont sub">
+          <div class="title">
+            <h4>Start Date</h4>
+          </div>
+          <div class="title">
+            <h4>Deadline</h4>
+          </div>
+          <div class="title">
+            <h4>Study Status</h4>
+          </div>
+          <div class="title">
+            <h4>Time Remains</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sample -->
+      <!-- <div class="goal-card">
+        <form id="update-goal-form">
+
+          <div class="skill-panel">
+            <div class="skill-name">
+              <input class="editable" type="text" id="goal-name" name="goal-name" required readonly />
+            </div>
+
+            <div class="skill-info">
+              <div class="data">
+                <div class="dat"><input class="dat editable" type="date" id="start-date" name="start-date" required
+                    readonly /></div>
+                <div class="dat"><input class="dat editable" type="date" id="end-date" name="end-date" required
+                    readonly /></div>
+                <div class="dat">
+                  <select class="dat editable" id="status" name="status" required disabled>
+                    <option value="not-started">Not Started</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                  </select>
+                </div>
+                <div class="dat">
+                  <p class="dat editable" class="time-remain">000</p>
+                </div>
+              </div>
+              <div class="progress-data">
+                <progress id="progress" name="progress" value="0" max="100"></progress>
+                <input class="dat editable" type="number" id="progress-input" name="progress-input" value="0" max="100"
+                  style="display: none;" />
+                <button type="button" class="edit-button card-button">Edit Goal</button>
+                <button type="submit" class="save-button card-button" style="display: none;">Save</button>
+                <button type="button" class="delete-button card-button">Delete Goal</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="resources-panel">
+            <div class="res-name">
+              <h4>Add Resources Link</h4>
+            </div>
+            <div id="resources">
+              <input class="editable" type="url" name="resource1" placeholder="Notion note" readonly />
+              <input class="editable" type="url" name="resource2" placeholder="Roadmap" readonly />
+              <input class="editable" type="url" name="resource3" placeholder="E-book" readonly />
+              <input class="editable" type="url" name="resource4" placeholder="Course" readonly />
+              <input class="editable" type="url" name="resource5" placeholder="Video" readonly />
+            </div>
+          </div>
+        </form>
+      </div> -->
+
+      <div id="add-goal-button-cont">
+        <button id="add-goal-button">
+          <img src="/icons/add.png" alt="" />
+        </button>
+      </div>
+
+
+    </div>
+  </main>
+</body>
+<script src="app.js"></script>
+
+</html>
