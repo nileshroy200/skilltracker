@@ -11,7 +11,7 @@ function updateTime() {
 setInterval(updateTime, 1000);
 updateTime();
 
-// Funtion for popup window and update profile informations
+// Function for popup window and update profile informations
 
 document
   .getElementById("edit-profile-button")
@@ -45,59 +45,53 @@ document
     document.getElementById("edit-profile-popup").style.display = "none";
   });
 
-  // Template for card
+// Template for card
 
 let goalElem = `
-         <form id="update-goal-form" autocomplete="off">
-
-          <div class="skill-panel">
-            <div class="skill-name">
-              <textarea class="editable" type="text" id="goal-name" name="goal-name" placeholder="Write your goal/skill" required readonly autocomplete="off"/></textarea>
-            </div>
-
-            <div class="skill-info">
-              <div class="data">
-                <div class="dat"><input class="dat editable" type="date" id="start-date" name="start-date" required readonly autocomplete="off"/></div>
-                <div class="dat"><input class="dat editable" type="date" id="end-date" name="end-date" required readonly autocomplete="off"/></div>
-                <div class="dat">
-                  <select class="dat editable" id="status" name="status" required disabled autocomplete="off">
-                    <option value="not-started">Not Started</option>
-                    <option value="in-progress">In Progress</option>
-                    <option value="completed">Completed</option>
-                  </select>
-                </div>
-                <div class="dat"><p class="dat editable time-remain">0 days </p></div>
-              </div>
-              <div class="progress-data">
-                <label class="prog-label" for="progress">Progress</label>
-                <progress id="progress" name="progress" value="0" max="100"></progress>
-                <input class="dat editable" type="number" id="progress-input" name="progress-input" value="" max="100" style="display: none;" placeholder="Input your progress(%)"/>
-                <input class="dat editable" type="number" id="progress-input" name="progress-input" value="0" max="100"
-                  style="display: none;" />
-                
-              </div>
-            </div>
+  <form id="update-goal-form" autocomplete="off">
+    <div class="skill-panel">
+      <div class="skill-name">
+        <textarea class="editable" id="goal-name" name="goal-name" placeholder="Write your goal/skill" required readonly autocomplete="off"></textarea>
+      </div>
+      <div class="skill-info">
+        <div class="data">
+          <div class="dat"><input class="dat editable" type="date" id="start-date" name="start-date" required readonly autocomplete="off"/></div>
+          <div class="dat"><input class="dat editable" type="date" id="end-date" name="end-date" required readonly autocomplete="off"/></div>
+          <div class="dat">
+            <select class="dat editable" id="status" name="status" required disabled autocomplete="off">
+              <option value="not-started">Not Started</option>
+              <option value="in-progress">In Progress</option>
+              <option value="completed">Completed</option>
+            </select>
           </div>
-
-          <div class="resources-panel">
-            <div class="res-name">
-              <h4>Add Resources Link</h4>
-            </div>
-            <div id="resources">
-              <input class="editable" type="url" name="resource1" placeholder="Notion Note" readonly autocomplete="off"/>
-              <input class="editable" type="url" name="resource2" placeholder="Roadmap" readonly autocomplete="off"/>
-              <input class="editable" type="url" name="resource3" placeholder="E-book" readonly autocomplete="off"/>
-              <input class="editable" type="url" name="resource4" placeholder="Course" readonly autocomplete="off"/>
-              <input class="editable" type="url" name="resource5" placeholder="Video" readonly autocomplete="off"/>
-              <input class="editable" type="url" name="resource5" placeholder="Reading" readonly autocomplete="off"/>
-              <div class="div"></div>
-              <button type="button" class="edit-button card-button">Edit Card</button>
-              <button type="submit" class="save-button card-button" style="display: none;">Save</button>
-              <button type="button" class="delete-button card-button">Delete Card</button>
-            </div>
-          </div>
-        </form>
-  `;
+          <div class="dat"><p class="dat editable time-remain">0 days</p></div>
+        </div>
+        <div class="progress-data">
+          <label class="prog-label" for="progress">Progress</label>
+          <progress id="progress" name="progress" value="0" max="100"></progress>
+          <input class="dat editable" type="number" id="progress-input" name="progress-input" value="" max="100" style="display: none;" placeholder="Input your progress(%)"/>
+        </div>
+      </div>
+    </div>
+    <div class="resources-panel">
+      <div class="res-name">
+        <h4>Add Resources Link</h4>
+      </div>
+      <div id="resources">
+        <input class="editable" type="url" name="resource1" placeholder="Notion Note" readonly autocomplete="off"/>
+        <input class="editable" type="url" name="resource2" placeholder="Roadmap" readonly autocomplete="off"/>
+        <input class="editable" type="url" name="resource3" placeholder="E-book" readonly autocomplete="off"/>
+        <input class="editable" type="url" name="resource4" placeholder="Course" readonly autocomplete="off"/>
+        <input class="editable" type="url" name="resource5" placeholder="Video" readonly autocomplete="off"/>
+        <input class="editable" type="url" name="resource6" placeholder="Reading" readonly autocomplete="off"/>
+        <div class="div"></div>
+        <button type="button" class="edit-button card-button">Edit Card</button>
+        <button type="submit" class="save-button card-button" style="display: none;">Save</button>
+        <button type="button" class="delete-button card-button">Delete Card</button>
+      </div>
+    </div>
+  </form>
+`;
 
 function calculateDaysLeft(startDate, endDate) {
   const start = new Date(startDate);
@@ -122,7 +116,10 @@ function createGoalCard() {
     newCard.querySelector("#progress").style.display = "none";
     newCard.querySelector("#progress-input").style.display = "inline";
     newCard.querySelector("#status").removeAttribute("disabled");
-    newCard.querySelectorAll("#resources input").forEach((input) => input.removeAttribute("readonly"));
+    newCard.querySelectorAll("#resources input").forEach((input) => {
+      input.removeAttribute("readonly");
+      input.type = "text"; // Change input type to text for editing
+    });
     newCard.querySelector(".edit-button").style.display = "none";
     newCard.querySelector(".save-button").style.display = "inline";
   });
@@ -143,9 +140,10 @@ function createGoalCard() {
     newCard.querySelector("#status").setAttribute("disabled", true);
     newCard.querySelectorAll("#resources input").forEach((input) => {
       input.setAttribute("readonly", true);
+      input.type = "url"; // Revert input type back to url for validation
       input.addEventListener("click", function () {
-        if (input.value) {
-          window.open(input.value, "_blank");
+        if (input.getAttribute("data-link")) {
+          window.open(input.getAttribute("data-link"), "_blank");
         }
       });
     });
@@ -157,6 +155,16 @@ function createGoalCard() {
     const endDate = newCard.querySelector("#end-date").value;
     const daysLeft = calculateDaysLeft(startDate, endDate);
     newCard.querySelector(".time-remain").textContent = `${daysLeft} days left`;
+  });
+
+  // Add event listeners to resource inputs to show placeholder text instead of link
+  newCard.querySelectorAll("#resources input").forEach((input) => {
+    input.addEventListener("input", function () {
+      if (input.value) {
+        input.setAttribute("data-link", input.value);
+        input.value = input.placeholder;
+      }
+    });
   });
 }
 
