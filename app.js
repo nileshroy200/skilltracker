@@ -52,7 +52,7 @@ let goalElem = `
 
           <div class="skill-panel">
             <div class="skill-name">
-              <textarea class="editable" type="text" id="goal-name" name="goal-name" placeholder="Write your goal" required readonly autocomplete="off"/></textarea>
+              <textarea class="editable" type="text" id="goal-name" name="goal-name" placeholder="Write your goal/skill" required readonly autocomplete="off"/></textarea>
             </div>
 
             <div class="skill-info">
@@ -89,10 +89,11 @@ let goalElem = `
               <input class="editable" type="url" name="resource3" placeholder="E-book" readonly autocomplete="off"/>
               <input class="editable" type="url" name="resource4" placeholder="Course" readonly autocomplete="off"/>
               <input class="editable" type="url" name="resource5" placeholder="Video" readonly autocomplete="off"/>
+              <input class="editable" type="url" name="resource5" placeholder="Reading" readonly autocomplete="off"/>
               <div class="div"></div>
-              <button type="button" class="edit-button card-button">Edit Goal</button>
+              <button type="button" class="edit-button card-button">Edit Card</button>
               <button type="submit" class="save-button card-button" style="display: none;">Save</button>
-              <button type="button" class="delete-button card-button">Delete Goal</button>
+              <button type="button" class="delete-button card-button">Delete Card</button>
             </div>
           </div>
         </form>

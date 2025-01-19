@@ -302,7 +302,7 @@ select option{
   background-color: #363A66;
 }
 #resources input {
-  width: 40%;
+  width: 35%;
   height: 22px;
   text-align: center;
   margin-right: 5px;
@@ -322,7 +322,7 @@ select option{
 }
 .card-button{
   height: 22px;
-  width: 260px;
+  width: 270px;
   padding: 0 10px;
   background-color: #767bb363;
   border: none;
