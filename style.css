@@ -373,3 +373,9 @@ select option{
   height: 40px;
   width: 40px;
 }
+#add-goal-button p {
+  font-size: 76px;
+    color: #d5dff2;
+    font-weight: 100;
+    font-family: auto;
+}
