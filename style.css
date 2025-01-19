@@ -19,7 +19,7 @@ body {
 .margin-wrap-cont {
   width: 70%;
   margin: auto;
-  padding: 20px 0;
+  padding: 14px 0;
   color: #d5dff2;
   /* border: 1px solid aqua; */
 }
@@ -27,8 +27,11 @@ body {
 /* Header Section */
 header {
   width: 100%;
-  height: 25%;
+  height: 20%;
   background-color: #6241f4;
+  position: sticky;
+  top:0;
+  z-index: 1;
 }
 
 #headerwarp {
@@ -55,18 +58,20 @@ header {
 }
 #edit-profile-button {
   padding: 4px 10px;
-  background-color: #20223663;
+  background-color: #1b1b1d41;
   border: none;
   border-radius: 10px;
   font-size: 10px;
-  color: #d5dff2;
+  color: #1bb155;
+  margin-top: 5px;
+  font-weight: bold;
 }
 #current-time {
-  font-size: 70px;
+  font-size: 55px;
   text-align: right;
 }
 #current-date {
-  font-size: 30px;
+  font-size: 25px;
   text-align: right;
 }
 
@@ -81,6 +86,15 @@ header {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
+}
+ 
+#edit-profile-form {
+      height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    color: #111112;
 }
 
 .popup-content {
@@ -106,6 +120,8 @@ header {
   cursor: pointer;
 }
 
+
+
 #mainwrap {
   display: flex;
   flex-direction: column;
@@ -123,6 +139,7 @@ header {
   flex-direction: row;
   justify-content: start;
   align-items: center;
+  margin-top: 10px;
 }
 .title-cont {
   height: 100%;
@@ -153,7 +170,7 @@ header {
 
 .goal-card {
   width: 100%;
-  height: 100px;
+  height: 125px;
   border-radius: 10px;
   overflow: hidden;
   /* border: 1px solid red; */
@@ -174,6 +191,7 @@ form{
   width: 100%;
   padding: 5px;
   color: #d5dff2;
+  cursor: pointer;
 }
 
 .editable:focus {
@@ -181,7 +199,7 @@ form{
   border-bottom: 1px solid #ccc;
 }
 .editable::placeholder {
-  color: #d5dff2;
+  color: #a1a6b1;
 }
 .skill-panel{
   height: 100%;
@@ -197,11 +215,17 @@ form{
   justify-content: center;
   font-size: 20px;
 }
-.skill-name input {
+.skill-name textarea {
   width: 100%;
+  height: 100%;
   text-align: center;
   background-color: #2D3157;
-  padding: 0 10px;
+  padding: 10px;
+  padding-top: 30px;
+  box-sizing: border-box;
+  resize: none; /* Prevent resizing if not needed */
+  color: white; /* Ensure text color is visible */
+  border: none; /* Remove border if needed */
 }
 .skill-info{
   width: 80%;
@@ -219,22 +243,33 @@ form{
   background-color: #363A66;
 }
 .data {
-  padding-top: 5px !important;
+  padding-top: 12px !important;
 }
 .dat{
   width: 100%;
   text-align: center;
+  padding: 0 15px;
 }
 .time-remain{
-  color: orange;
+  color: #ff7f50;
+}
+select{
+  color:#1bb155;
 }
 select option{
   background-color: #202236;
   color: #d5dff2;
 }
 #progress {
-  width: 100%;
+  width: 80%;
   margin: 0 10px;
+  margin-right: 6%;
+  cursor: pointer;
+}
+.prog-label {
+  margin-left: 22px;
+  color: #1bb155;
+  font-size: 15px;
 }
 .resources-panel{
   display: flex;
@@ -243,6 +278,7 @@ select option{
 }
 .res-name{
   width: 20%;
+  height: 100%;
   display: flex;
   justify-content: center;
   background-color: #2D3157;
@@ -251,50 +287,89 @@ select option{
 }
 .res-name h4{
   font-weight: 300;
+  font-size: 15px;
+  font-size: #d5dff2;
 }
 #resources {
   width: 80%;
   height: 100%;
-  padding: 5px 10px;
+  padding: 12px 20px;
+  padding-right: 40px;
   display: flex;
   flex-direction: row;
   background-color: #363A66;
 }
 #resources input {
-  width: 100%;
+  width: 40%;
+  height: 25px;
   text-align: center;
+  margin-right: 5px;
+  margin-top: -3px;
+  font-size: 0.6em;
+  color: #252EFF;
+  border: 1px solid #7881d1a2;
+  border-radius: 16px;
+  background-color: #B0B3FD;
 }
-
+#resources input::placeholder{
+  font-size: 12px;
+  color: #252cffa9;
+}
+.div{
+  width: 40px;
+}
 .card-button{
-  height: 20px;
-  width: 400px;
-  padding: 4px 10px;
+  height: 22px;
+  width: 260px;
+  padding: 0 10px;
   background-color: #767bb363;
   border: none;
   border-radius: 10px;
-  font-size: 10px;
+  font-size: 11px;
   color: #d5dff2;
-  margin: 5px 5px 0px 0px;
+  margin: -2px 5px 0px 0px;
+  cursor: pointer;
 }
-  
+.edit-button{
+  color: #1bb155;
+  /* color: #ff7f50; */
+  letter-spacing: 1px;
+}
+.delete-button{
+  color: #f33565;
+  letter-spacing: 1px;
+}
+.save-button{
+  color: #1bb155;
+  letter-spacing: 1px;
+}
 /* Style for the "Add goal card" button */
 #add-goal-button-cont {
   position: fixed;
   bottom: 40px;
-  right: 40px;
-  width: 80px;
-  height: 50px;
+  right: 10%;
+  width: 60px;
+  height: 60px;
   background-color: #363a66;
-  border-radius: 10px;
+  border-radius: 50px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8;
+  
 }
 #add-goal-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: none;
   border: none;
   width: 100%;
   padding: 10px;
+  cursor: pointer;
 }
 #add-goal-button img {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
 }
