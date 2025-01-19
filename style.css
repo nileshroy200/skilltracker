@@ -28,10 +28,12 @@ body {
 header {
   width: 100%;
   height: 20%;
-  background-color: #6241f4;
+  display: flex;
+  align-items: center;
   position: sticky;
   top:0;
   z-index: 1;
+  background-color: #6241f4;
 }
 
 #headerwarp {
@@ -301,10 +303,10 @@ select option{
 }
 #resources input {
   width: 40%;
-  height: 25px;
+  height: 22px;
   text-align: center;
   margin-right: 5px;
-  margin-top: -3px;
+  margin-top: -2px;
   font-size: 0.6em;
   color: #252EFF;
   border: 1px solid #7881d1a2;
@@ -369,13 +371,9 @@ select option{
   padding: 10px;
   cursor: pointer;
 }
-#add-goal-button img {
-  height: 40px;
-  width: 40px;
-}
 #add-goal-button p {
   font-size: 76px;
-    color: #d5dff2;
-    font-weight: 100;
-    font-family: auto;
+  color: #d5dff2;
+  font-weight: 100;
+  font-family: auto;
 }
