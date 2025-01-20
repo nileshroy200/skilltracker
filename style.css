@@ -229,6 +229,9 @@ form{
   color: white; /* Ensure text color is visible */
   border: none; /* Remove border if needed */
 }
+.skill-name textarea::placeholder {
+  font-size: 15px;
+}
 .skill-info{
   width: 80%;
   height: 100%;
