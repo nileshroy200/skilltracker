@@ -51,7 +51,7 @@ let goalElem = `
   <form id="update-goal-form" autocomplete="off">
     <div class="skill-panel">
       <div class="skill-name">
-        <textarea class="editable" id="goal-name" name="goal-name" placeholder="Click Edit to Write your goal/skill" required readonly autocomplete="off"></textarea>
+        <textarea class="editable" id="goal-name" name="goal-name" placeholder="Click "Edit Card" to Write goal/skill" required readonly autocomplete="off"></textarea>
       </div>
       <div class="skill-info">
         <div class="data">
